@@ -1,0 +1,22 @@
+.icon-button {
+    border: none;
+    box-shadow: none;
+    background-color: rgb(38, 151, 38);
+    color: white;
+    border-radius: 12px;
+}
+.icon-button:hover {
+    background-color: green;
+    color: yellow;
+}
+.stButton>button {
+    border: none;
+    box-shadow: none;
+    background-color: rgb(38, 151, 38);
+    color: white;
+    border-radius: 12px;
+}
+.stButton>button:hover {
+    background-color: green;
+    color: yellow;
+}

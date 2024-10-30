@@ -1,4 +1,9 @@
 import streamlit as st
+from PIL import Image
+
+from data import *
+from functions import setPageConfig
+from pages.sidebar import sidebarPage
 
 # custom_html = """
 # <div class="header">
@@ -31,7 +36,12 @@ import streamlit as st
 # # Display the custom HTML
 # st.components.v1.html(custom_html)
 
+setPageConfig()
+
 st.title("Prompt Edition")
+
+with st.sidebar:
+    sidebarPage()
 
 cols = st.columns(
     [.5, .5],
@@ -114,8 +124,10 @@ with cols[1]:
 
     with cols[1]:
         st.button(
-            "Revert",
-            type="secondary"
+            #"Revert",
+            st.session_state["icons"]["revert"],
+            type="secondary",
+            help="Restore default prompt"
         )
 
     with cols[2]:

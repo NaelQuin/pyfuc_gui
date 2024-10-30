@@ -1,7 +1,10 @@
 import os
+import sys
 import socket
 
-MAIN_FILE = "./home.py"
+MAIN_FILE = "./home.py"\
+    if len(sys.argv) == 1\
+    else f"./{sys.argv[1].rstrip('.py')}.py"
 PORT = 8501
 
 def runServer(file, port):
@@ -23,6 +26,8 @@ if __name__ == '__main__':
             runServer(MAIN_FILE, PORT)
         elif not is_port_in_use(PORT):
             os.remove("./.serverRunning")
+            for cacheFile in os.listdir("./.streamlit/cache"):
+                os.remove(f"./.streamlit/cache/{cacheFile}")
             runServer(MAIN_FILE, PORT)
         else:
             while is_port_in_use(PORT):

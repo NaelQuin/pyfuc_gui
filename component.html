@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function showToast() {
+            const event = new CustomEvent("show-toast", { detail: "Hello, this is a Streamlit toast!" });
+            document.dispatchEvent(event);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="showToast()">Click me for a toast</button>
+</body>
+</html>
